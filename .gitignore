@@ -1,6 +1,6 @@
 # python
 .pytest_cache
-__pycache__/
+__pycache__
 # Pycharm
 .idea/
 # LOG
