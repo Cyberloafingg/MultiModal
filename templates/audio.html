@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>智能湿地评估与水鸟监测系统</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link href="static/css/css2.css" rel="stylesheet">
+
+<link href="static/css/all.min.css" rel="stylesheet">
+
+<link href="static/css/flaticon.css" rel="stylesheet">
+
+<link href="static/css/owl.carousel.min.css" rel="stylesheet">
+<link href="static/css/lightbox.min.css" rel="stylesheet">
+
+<link href="static/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid bg-light position-relative shadow">
+<nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+<a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
+<img src="static/picture/logo1.jpg" class="img-fluid rounded-circle mx-auto mb-3" style="width: 60px;">
+<span class="text-primary">潮起飞羽</span>
+</a>
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+<div class="navbar-nav font-weight-bold mx-auto py-0">
+
+<a href="{{url_for('root')}}" class="nav-item nav-link">图像识别</a>
+
+<a href="{{url_for('video')}}" class="nav-item nav-link">视频识别</a>
+
+<a href="{{url_for('audio')}}" class="nav-item nav-link active">音频识别</a>
+<!--<a href="{{url_for('wetland')}}" class="nav-item nav-link">湿地变化识别</a>-->
+<a href="{{url_for('answer')}}" class="nav-item nav-link">知识答题</a>
+
+
+ <!--
+<a href="team.html" class="nav-item nav-link">Teachers</a>
+<a href="gallery.html" class="nav-item nav-link">Gallery</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+--->
+</div>
+<a href="" class="btn btn-primary px-4">登录</a>
+</div>
+</nav>
+</div>
+
+<div class="container-fluid bg-primary mb-5">
+<div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+<h3 class="display-3 font-weight-bold text-white">水鸟音频识别</h3>
+<div class="d-inline-flex text-white">
+<p class="m-0"><a class="text-white" href="">Home</a></p>
+<p class="m-0 px-2">/</p>
+<p class="m-0">音频识别</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="container-fluid pt-5">
+<div class="container">
+<div class="text-center pb-2">
+<p class="section-title px-5"><span class="px-2">音频识别</span></p>
+<h1 class="mb-4">声音识别水鸟种类</h1>
+</div>
+
+
+ <div class="container-fluid py-5">
+<div class="container">
+<div class="row align-items-center">
+
+
+<div class="col-lg-7 mb-5 mb-lg-0">
+<p class="section-title pr-5"><span class="pr-2">音频识别</span></p>
+<h1 class="mb-4">通过音频识别水鸟</h1>
+<p>通过识别一段水鸟音频分析并识别水鸟种类，解答您的困惑！</p>
+<ul class="list-inline m-0">
+<li class="py-2"><i class="fa fa-check text-success mr-3"></i>支持多种音频格式</li>
+<li class="py-2"><i class="fa fa-check text-success mr-3"></i>识别水鸟种类</li>
+<li class="py-2"><i class="fa fa-check text-success mr-3"></i>快速展示结果</li>
+</ul>
+    <div class="form-group">
+ <img class="card-img-top mb-2" src="static/picture/blog-2.jpg" alt="">
+</div>
+</div>
+
+ <div class="col-lg-5">
+<div class="card border-0">
+<div class="card-header bg-secondary text-center p-4">
+<h1 class="text-white m-0">上传与识别</h1>
+</div>
+<div class="card-body rounded-bottom bg-primary p-5">
+
+<div class="form-group">
+    <form action="{{ url_for('audio') }}" method=post enctype=multipart/form-data id=upload-form2>
+        <div class="btn btn-secondary btn-block border-0 py-3">
+            <div class="section">
+                <center><h4 class="text-white m-0">选择经纬度以及时间:</h4></center>
+                    <div class="label">
+                        维度:
+                        <input type="number" min=-90 max=90 step=1 name="lat"  value=-1>
+                        经度:
+                        <input type="number" min=-180 max=180 step=1 name="lon"  value=-1>
+
+                    </div>
+                <p><br></p>
+                <div class="label">
+                    时间(周):
+                        <input type="number" min=-1 max=48 step=1 name="week"  value=-1>
+                </div>
+
+    </div>
+
+        </div>
+        <p><br></p>
+        <div class="btn btn-secondary btn-block border-0 py-3">
+            <div class="section">
+                <center><h4 class="text-white m-0">设置分析参数:</h4></center>
+                    <div class="label">
+                    分析间隔(秒):
+                    <input type="number" min=0.0 max=2.9 step=0.1 name="overlap"  value=0.0>
+                    灵敏度:
+                    <input type="number" min=0.5 max=1.5 step=0.1 name="sensitivity"  value=1.0>
+
+                    </div>
+                <p><br></p>
+                <div class="label">
+                    最小置信度:
+                    <input type="number" min=0.01 max= 0.99 step=0.01 name="min_conf"  value=0.1>
+                </div>
+
+    </div>
+
+        </div>
+        <p><br></p>
+<div class="btn btn-secondary btn-block border-0 py-3">
+
+    <div class="section">
+
+
+            </div>
+            <center><input id="file-picker2" type="file" name="file" accept="audio/*" multiple></center>
+          </div>
+            <center><h5 class="heading">选择水鸟音频点击上传</h5></center>
+            <center> <input type=submit value='上传' class="btn btn-secondary btn-block border-0 py-3"></center><br>
+</form>
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<script data-cfasync="false" src="static/js/email-decode.min.js"></script><script src="static/js/jquery-3.4.1.min.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+<script src="static/js/bootstrap.bundle.min.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+<script src="static/js/easing.min.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+<script src="static/js/owl.carousel.min.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+<script src="static/js/isotope.pkgd.min.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+<script src="static/js/lightbox.min.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+
+<script src="static/js/jqBootstrapValidation.min.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+<script src="static/js/contact.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+
+<script src="static/js/main.js" type="e7d543e5907bc87084fc1bc0-text/javascript"></script>
+<script src="static/js/rocket-loader.min.js" data-cf-settings="e7d543e5907bc87084fc1bc0-|49" defer=""></script>
+</body>
+</html>

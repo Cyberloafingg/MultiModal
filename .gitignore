@@ -1,0 +1,6 @@
+# python
+.pytest_cache
+# Pycharm
+.idea/
+# LOG
+error_log.txt

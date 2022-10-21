@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+ <style type="text/css">
+		#Announcement {
+
+			padding-top: 10px;
+		}
+
+		.explain {
+			display: none;
+			margin-top: 10px;
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+		}
+
+		.option {
+			display: none;
+		}
+
+		.question {
+			margin-top: 7px;
+			margin-bottom: 7px;
+			padding: 10px;
+
+		}
+
+		h1 {
+			text-align: right;
+		}
+
+		.quiz-content {
+			font-family: Verdana, sans-serif;
+		}
+
+		#button {
+			margin-top: 20px;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+
+		fieldset {
+			margin: 20px;
+			padding: 10px;
+		}
+
+		.fill input {
+			border-style: solid;
+			border-left: none;
+			border-top: none;
+			border-right: none;
+			vertical-align: middle;
+			float: left;
+		}
+
+		.fill label {
+			float: left;
+		}
+
+		#headimg {
+			margin-left: 70px;
+		}
+
+		.true {
+			color: green;
+			font-weight: bold;
+			float: left;
+		}
+
+		.false {
+			color: red;
+			font-weight: bold;
+			float: left;
+		}
+
+		judge {
+			float: left;
+		}
+
+		.correctE {
+			display: none;
+		}
+
+		radio {}
+
+		.answers {
+			padding-top: 12px;
+			font-family: Verdana, sans-serif;
+		}
+
+		#title {}
+
+		form {
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+
+		h1 {
+			margin-left: 11%;
+			margin-right: 11%;
+		}
+
+		.header {
+			display: block;
+			text-align: center;
+			margin: auto;
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+
+		.header img {
+			width: 100px;
+			display: inline-block;
+			float: left;
+		}
+
+		.header div {
+			display: block;
+		}
+
+		.header h1 {
+			display: block;
+			margin-bottom: 0;
+			color: #00468E;
+			font-style: italic;
+
+		}
+
+		.nav {
+			width: 100%;
+			display: block;
+			clear: both;
+			margin: auto;
+			text-align: center;
+		}
+
+		.nav {
+			border-top: 1px solid #999;
+			border-bottom: 1px solid #999;
+			margin: 1em 0;
+		}
+
+		.nav a {
+			display: inline-block;
+			margin: 5px 0px;
+			padding: 5px 10px;
+		}
+
+		.nav a:hover {
+			background-color: #00468E;
+			color: white;
+		}
+
+		.section h1 {
+			font-size: 13.5pt;
+			background-color: #ddd;
+			color: white;
+			padding: 3px 10px;
+		}
+
+		.section ul {
+			padding-left: 1.25em;
+		}
+
+		.section ul li {
+			line-height: 2em;
+		}
+
+		.section table th,
+		.section table td {
+			text-align: left;
+			padding-right: 20px;
+		}
+
+		.section table td {
+			line-height: 1.5em;
+		}
+
+		.section div {}
+
+		.section h2 {
+			font-size: 12pt;
+		}
+
+		.footer {
+			display: block;
+			border-top: 1px solid #999;
+			margin: 2em 0;
+			padding: 1em 1em 0 1em;
+		}
+
+
+
+		li a,
+		.dropbtn {
+			display: inline-block;
+			color: #4CAF50;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		li a:hover,
+		.dropdown:hover .dropbtn {
+			background-color: white;
+			color: #4CAF50;
+		}
+
+		li.dropdown {
+			display: inline-block;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+
+		.dropdown-content a {
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+
+		}
+
+		.dropdown-content a:hover {
+			background-color: #f1f1f1;
+			color: #4CAF50;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+     </style>
+<title>智能湿地评估与水鸟检测系统</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link href="static/css/css2.css" rel="stylesheet">
+
+<link href="static/css/all.min.css" rel="stylesheet">
+
+<link href="static/css/flaticon.css" rel="stylesheet">
+
+<link href="static/css/owl.carousel.min.css" rel="stylesheet">
+<link href="static/css/lightbox.min.css" rel="stylesheet">
+
+<link href="static/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid bg-light position-relative shadow">
+<nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+<a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
+<img src="static/picture/logo1.jpg" class="img-fluid rounded-circle mx-auto mb-3" style="width: 60px;">
+<span class="text-primary">潮起飞羽</span>
+</a>
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+<div class="navbar-nav font-weight-bold mx-auto py-0">
+
+<a href="{{url_for('root')}}" class="nav-item nav-link">图像识别</a>
+
+
+<a href="{{url_for('video')}}" class="nav-item nav-link">视频识别</a>
+
+<a href="{{url_for('audio')}}" class="nav-item nav-link">音频识别</a>
+<!---<a href="{{url_for('wetland')}}" class="nav-item nav-link">湿地变化识别</a>-->
+<a href="{{url_for('answer')}}" class="nav-item nav-link active">知识答题</a>
+
+
+ <!--
+<a href="team.html" class="nav-item nav-link">Teachers</a>
+<a href="gallery.html" class="nav-item nav-link">Gallery</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+--->
+</div>
+<a href="" class="btn btn-primary px-4">User</a>
+</div>
+</nav>
+</div>
+
+
+<div class="container-fluid bg-primary mb-5">
+<div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+<h3 class="display-3 font-weight-bold text-white">水鸟知识答题</h3>
+<div class="d-inline-flex text-white">
+<p class="m-0"><a class="text-white" href="">Home</a></p>
+<p class="m-0 px-2">/</p>
+<p class="m-0">答题竞猜</p>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid pt-5">
+<div class="container">
+<div class="text-center pb-2">
+<p class="section-title px-5"><span class="px-2">开始</span></p>
+ <center><h2 class="mb-4">知识答题</h2></center>
+</div>
+
+<div class="row pb-3">
+<div class="col-lg-4 mb-4">
+
+
+<div class="card border-0 shadow-sm mb-2">
+ <img class="card-img-top mb-2" src="static/picture/answer-1.png" alt="">
+<div class="card-body bg-light text-center p-4">
+<h4 class="">题目1</h4>
+<div class="d-flex justify-content-center mb-3">
+<small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
+<small class="mr-3"><i class="fa fa-folder text-primary"></i> 类型：选择题</small>
+<small class="mr-3"><i class="fa fa-comments text-primary"></i> 难易：简单</small>
+</div>
+
+                        <div class="question">
+
+						<label class="quiz-content">
+							1. 北京2008年第29届奥运会中的吉祥物为五个福娃，其中有一个吉祥物的外形是一只展翅飞翔的燕子，其造型创意来自北京传统的沙燕风筝。这个吉祥物的昵称是
+						</label>
+						<div class="answers">
+							<input class="radio" type="radio" value="A" name="q1">A. 妮妮</br>
+
+							<input class="radio" type="radio" value="B" name="q1">B. 晶晶</br>
+
+							<input class="radio" type="radio" value="C" name="q1">C. 贝贝</br>
+
+							<input class="radio" type="radio" value="C" name="q1">D. 迎迎</br>
+						</div>
+						<div class="explain">
+							<div class="option">A</div>
+							<div class="correctE">Correct.
+								妮妮来自天空，是一只展翅飞翔的燕子，其造型创意来自北京传统的沙燕风筝。“燕”还代表燕京(古代北京的称谓)。妮妮把春天和喜悦带给人们，飞过之处播撒“祝您好运”的美好祝福。天真无邪、欢快矫捷的妮妮将在体操比赛中闪亮登场，她代表奥林匹克五环中绿色的一环。
+							</div>
+							<div class="incorrectE">Incorrect. Review the social media VGI part of Lecture 4.</div>
+						</div>
+                        </div><!-- 这是一道题的结尾 -->
+                    <div class="submit">
+					<center><input id="button" type="button" value="提交" class="btn btn-primary px-4 mx-auto my-2" onclick="return valid();"></center>
+				 </div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 mb-4">
+<div class="card border-0 shadow-sm mb-2">
+<img class="card-img-top mb-2" src="static/picture/answer-2.png" alt="">
+<div class="card-body bg-light text-center p-4">
+<h4 class="">题目2</h4>
+<div class="d-flex justify-content-center mb-3">
+<small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
+<small class="mr-3"><i class="fa fa-folder text-primary"></i>类型：选择题</small>
+<small class="mr-3"><i class="fa fa-comments text-primary"></i> 难易：简单</small>
+</div>
+
+ <div class="question">
+						<label class="quiz-content">
+							2.猛禽指的是?
+						</label>
+						<div class="answers">
+							<input class="radio" type="radio" value="A" name="q2">A. 能吃肉的鸟</br>
+							<input class="radio" type="radio" value="B" name="q2">B. 鹰、鸮等捕食性的鸟</br>
+							<input class="radio" type="radio" value="C" name="q2">C. 专抓活食的鸟</br>
+							</input>
+						</div>
+						<div class="explain">
+							<div class="option">C</div>
+							<div class="C">Correct.
+								猛禽是鸟类六大生态类群之一，涵盖了鸟类传统分类系统中隼形目和鸮形目的所有种。猛禽包括鹰、雕、鵟、鸢、鹫、鹞、鹗、隼、鸮、鸺鹠等次级生态类群，均为掠食性鸟类。在生态系统中，猛禽个体数量较其他类群少，但是却处于食物链的顶层，扮演了十分重要的角色。另外有绰号称为“战斗机”。
+							</div>
+							<div class="B">Incorrect. </div>
+							<div class="D">Incorrect. </div>
+							<div class="A">Incorrect. </div>
+						</div>
+					</div><!-- 这是一道题的结尾 -->
+                       <div class="submit">
+					<center><input id="button2" type="button" value="提交" class="btn btn-primary px-4 mx-auto my-2" onclick="return valid();"></center>
+				 </div>
+</div>
+</div>
+</div>
+
+
+<div class="col-lg-4 mb-4">
+<div class="card border-0 shadow-sm mb-2">
+<img class="card-img-top mb-2" src="static/picture/answer-3.png" alt="">
+<div class="card-body bg-light text-center p-4">
+<h4 class="">题目3</h4>
+<div class="d-flex justify-content-center mb-3">
+<small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
+<small class="mr-3"><i class="fa fa-folder text-primary"></i> 类型：选择题</small>
+<small class="mr-3"><i class="fa fa-comments text-primary"></i> 难易：简单</small>
+</div>
+ <div class="question">
+						<label class="quiz-content">
+							3. 根据鸟类是否迁徙以及迁徙方式的不同，可以分为留鸟、候鸟和迷鸟等，比如家燕和金腰燕在浙江属于
+						</label>
+						<div class="answers">
+							<input class="radio" type="radio" value="A" name="q3">A. 冬候鸟</br>
+
+							<input class="radio" type="radio" value="B" name="q3">B. 旅鸟</br>
+
+							<input class="radio" type="radio" value="C" name="q3">C. 夏候鸟</br>
+
+							<input class="radio" type="radio" value="D" name="q3">D. 留鸟</br>
+						</div>
+						<div class="explain">
+							<div class="option">D</div>
+							<div class="D">
+								Correct.终年生活在一个地区，不随季节迁徙的鸟统称留鸟。它们通常终年在其出生地（或称繁殖区）内生活。(引：或终年栖居繁殖地区而不迁徙的鸟类，如喜鹊、麻雀等。世界各地均有，南方种类较多，北方留鸟，均为耐寒种类，如松鸡、雷鸟、雪鸡等)中国的留鸟有麻雀、乌鸦、白头翁、喜鹊、画眉、鱼鹰、啄木鸟、鹰等。留鸟在冬季很难觅食，每到冬季，有的留鸟就成群结队地生活在一起。啄取植物的果实和种子为食。在某地一年四季皆可见的鸟类。
+								终年生活在一个地区，不随季节迁徙的鸟叫留鸟。它们通常终年在其出生地(或称繁殖区)内生活。</div>
+							<div class="B">Incorrect. </div>
+							<div class="C">Incorrect. </div>
+							<div class="A">Incorrect. </div>
+						</div>
+					</div><!-- 这是一道题的结尾 -->
+                    <div class="submit">
+					<center><input id="button3" type="button" value="提交" class="btn btn-primary px-4 mx-auto my-2" onclick="return valid();"></center>
+				 </div>
+</div>
+</div>
+</div>
+
+<div class="col-md-12 mb-4">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center mb-0">
+<li class="page-item disabled">
+<a class="page-link" href="#" aria-label="Previous">
+<span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span>
+</a>
+</li>
+<li class="page-item active"><a class="page-link" href="#">1</a></li>
+<li class="page-item"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Next">
+<span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+
+
+	<script type="text/javascript">
+		function valid() {
+
+			var ex = document.getElementsByClassName("explain");
+			var an = document.getElementsByClassName("answers");
+
+			for (var i = 0; i < ex.length; i++) {
+				var answerDot = ex[i];
+				answerDot.style.display = "block";
+				//实现显示隐藏答案
+
+				var dot = document.createElement("div");
+				option = ex[i].getElementsByClassName("option");
+				//alert(option[0].innerText);//获得正确选项
+				var readerChoice = "";
+				var cc = an[i].getElementsByClassName("radio");
+				if (cc.length == 0) {
+					cc = an[i].getElementsByClassName("checkbox");
+					if (cc.length == 0) {
+						cc = an[i].getElementsByClassName("text");
+						//alert(cc[0].value);
+						readerChoice = cc[0].value;
+					}
+				}
+
+				for (var j = 0; j < cc.length; j++) {
+					if (cc[j].checked) {
+						readerChoice = readerChoice + cc[j].value;
+						//alert(readerChoice);
+					}
+				}
+
+				//获得读者选的答案
+				var theJudge = document.createElement("div");
+				var cc = document.createElement("div");
+				var ce = ex[i].getElementsByClassName("correctE");
+				var ue = ex[i].getElementsByClassName("incorrectE");
+				if (readerChoice == option[0].innerText) { //correctE的情况
+					theJudge.innerText = "√";
+					theJudge.setAttribute("class", "true");
+				} else {
+					theJudge.innerText = "×";
+					theJudge.setAttribute("class", "false");
+				}
+				if (readerChoice == "") {
+					readerChoice = "?";
+				}
+				cc.innerText = ",your answer is " + readerChoice + " .";
+
+				var jj = ex[i].getElementsByClassName("judge");
+				if (jj.length > 0) {
+					//alert(jj.length);
+					//jj[0].parentNode;
+					ex[i].removeChild(jj[0].parentNode);
+				}
+
+				//alert(readerChoice);
+				cc.setAttribute("class", "judge");
+				if (answerDot.getElementsByClassName("judge").length > 0) {
+
+				} else {
+					answerDot.insertBefore(dot, answerDot.childNodes[0]);
+					dot.insertBefore(cc, dot.childNodes[0]); //插入your answer is
+					dot.insertBefore(theJudge, dot.childNodes[0]); //插入
+				}
+				if (ce.length >= 1 && ue.length >= 1) { //correctE和uncorrect的情况
+					if (readerChoice == option[0].innerText) { //correctE的情况
+						ce[0].style.display = "block";
+						ue[0].style.display = "none";
+					} else {
+						ce[0].style.display = "none";
+						ue[0].style.display = "block";
+					}
+					cc.innerText = ",your answer is " + readerChoice + " .";
+					cc.setAttribute("class", "judge");
+					answerDot.insertBefore(dot, answerDot.childNodes[0]);
+					dot.insertBefore(cc, dot.childNodes[0]); //插入your answer is
+					dot.insertBefore(theJudge, dot.childNodes[0]); //插入
+				} else { //
+					var ABCD = new Array(4);
+					var strabcd = ["A", "B", "C", "D"];
+					var abclength = 0;
+					for (var j = 0; j < 4; j++) {
+						ABCD[j] = ex[i].getElementsByClassName(strabcd[j]);
+						if (ABCD[j].length > 0) {
+							abclength++;
+						}
+					}
+					if (abclength > 0) {
+						for (var j = 0; j < abclength; j++) {
+							if (readerChoice == strabcd[j]) {
+								ABCD[j][0].style.display = "block";
+							} else {
+								ABCD[j][0].style.display = "none";
+							}
+						}
+					}
+				}
+			}
+			return true;
+		}
+	</script>
+<div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+
+<div class="row pt-5">
+<div class="col-lg-3 col-md-6 mb-5">
+<a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px;">
+
+<span class="text-white">潮起飞羽</span>
+</a>
+<p> 多模态水鸟识别与智能湿地监测系统.</p>
+<div class="d-flex justify-content-start mt-4">
+<a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+<a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-5">
+<h3 class="text-primary mb-4">联系我们</h3>
+<div class="d-flex">
+<h4 class="fa fa-map-marker-alt text-primary"></h4>
+<div class="pl-3">
+<h5 class="text-white">地址</h5>
+<p>北京林业大学，清华东路35号</p>
+</div>
+</div>
+<div class="d-flex">
+<h4 class="fa fa-envelope text-primary"></h4>
+<div class="pl-3">
+<h5 class="text-white">邮件</h5>
+<p><a href="email-protection.html" class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">[email&#160;protected]</a></p>
+</div>
+</div>
+<div class="d-flex">
+<h4 class="fa fa-phone-alt text-primary"></h4>
+<div class="pl-3">
+<h5 class="text-white">联系方式</h5>
+<p>+11111111111</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-5">
+<h3 class="text-primary mb-4">快速访问</h3>
+<div class="d-flex flex-column justify-content-start">
+<a class="text-white mb-2" href="{{url_for('root')}}"><i class="fa fa-angle-right mr-2"></i>图像识别</a>
+<a class="text-white mb-2" href="{{url_for('video')}}"><i class="fa fa-angle-right mr-2"></i>水鸟种类识别</a>
+<a class="text-white mb-2" href="{{url_for('wetland')}}"><i class="fa fa-angle-right mr-2"></i>湿地面积变化识别</a>
+<a class="text-white mb-2" href="{{url_for('answer')}}"><i class="fa fa-angle-right mr-2"></i>知识答题</a>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-5">
+<h3 class="text-primary mb-4">指导教师</h3>
+
+<div class="d-flex flex-column justify-content-start">
+    <p> 王晗 <br><br>牛科</p>
+</div>
+
+</div>
+</div>
+</div>
+<div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
+</div>
+</div>
+
+
+<a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<script data-cfasync="false" src="static/js/email-decode.min.js"></script><script src="static/js/jquery-3.4.1.min.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+<script src="static/js/bootstrap.bundle.min.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+<script src="static/js/easing.min.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+<script src="static/js/owl.carousel.min.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+<script src="static/js/isotope.pkgd.min.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+<script src="static/js/lightbox.min.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+
+<script src="static/js/jqBootstrapValidation.min.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+<script src="static/js/contact.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+
+<script src="static/js/main.js" type="e90b04dcaa13f7733ecd4a4e-text/javascript"></script>
+<script src="static/js/rocket-loader.min.js" data-cf-settings="e90b04dcaa13f7733ecd4a4e-|49" defer=""></script></body>
+</html>
